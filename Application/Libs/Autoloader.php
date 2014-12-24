@@ -1,14 +1,17 @@
 <?php
 namespace Application\Libs;
 
-include 'Application/Config/Config.php';
-use Application\Config\Config as Config;
+/**
+ * Autoload all my classes
+ */
+spl_autoload_register(function($className) {
+	$ds = DIRECTORY_SEPARATOR;
+	$dir = __DIR__;
+	
+	$className = str_replace('\\', $ds, $className);
+	$file = ".{$ds}{$className}.php";
 
-include APP_NAMESPACE.'Engine.php';
-include APP_NAMESPACE.'Libs/Interfaces/IController.php';
-include APP_NAMESPACE.'Libs/Controller.php';
-
-// autoload all controller classes
-spl_autoload_register(function ($controller) {
-	include $controller.'.php';
+	if (is_readable($file)) {
+		require_once $file;
+	}
 });

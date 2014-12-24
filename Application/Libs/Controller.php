@@ -4,15 +4,17 @@ use Application\Libs\Interfaces\IController;
 
 abstract class Controller implements IController {
 	private $model = null;
+	private $db = null;
 	
 	public function __construct($model) {
 		$this->loadModel($model);
+		$this->db = null; // create new object instance of database class
 	}
 	
 	private function loadModel($model) {
-		include_once 'Application/Models/'.$model.'.php';
+		//include_once 'Application/Models/'.$model.'.php';
 		$modelClass = "Application\\Models\\".$model;
-		$this->model = new $modelClass(null);
+		$this->model = new $modelClass($this->db);
 	}
 	
 	protected function getModel() {

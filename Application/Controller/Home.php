@@ -6,6 +6,7 @@
 
 namespace Application\Controller;
 use Application\Libs\Controller;
+use Application\Views\HomeView;
 
 class Home extends Controller {
 	/**
@@ -21,7 +22,8 @@ class Home extends Controller {
 	 * @see \Application\Libs\Controller::index()
 	 */
 	public function index() {
-		echo "index page";
+		echo "index test";
+		//$view = new HomeView();
 	}
 	
 	/**
