@@ -22,8 +22,12 @@ class Home extends Controller {
 	 * @see \Application\Libs\Controller::index()
 	 */
 	public function index() {
-		echo "index test";
-		//$view = new HomeView();
+		$arr = array("Some", "Stupid", "Array");
+		
+		$view = new HomeView("home.tpl");
+		$view->assign("name", $this->getModel()->getTestUser());
+		$view->assign("array", $arr);
+		$view->display();
 	}
 	
 	/**

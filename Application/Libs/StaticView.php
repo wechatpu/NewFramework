@@ -12,11 +12,17 @@ abstract class StaticView {
 	}
 	
 	private function newSmartyInstance() {
-		$smarty = new Smarty();
-		$smarty->template_dir = "Public/smarty/templates/";
-		$smarty->compile_dir  = "Public/smarty/templates_c/";
-		$smarty->config_dir   = "Public/smarty/configs/";
-		$smarty->cache_dir    = "Public/smarty/cache/";
+		require_once 'Application/Libs/SmartyLibs/Smarty.class.php';
+		
+		$tempSmarty = new \Smarty();
+		$tempSmarty->template_dir = "Public/smarty/templates/";
+		$tempSmarty->compile_dir  = "Public/smarty/templates_c/";
+		$tempSmarty->config_dir   = "Public/smarty/configs/";
+		$tempSmarty->cache_dir    = "Public/smarty/cache/";
+		$tempSmarty->caching 	  = true;
+		$tempSmarty->cache_lifetime = 120;
+		
+		return $tempSmarty;
 	}
 	
 	public function assign($key, $value) {

@@ -1,6 +1,8 @@
 <?php
 namespace Application\Config;
 
+DEFINE('SMARTY_SPL_AUTOLOAD',1);
+
 /**
  * Application namespace
  */

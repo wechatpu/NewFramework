@@ -1,6 +1,8 @@
 <?php
 namespace Application\Libs;
 
+require_once 'Application/Config/Config.php';
+
 /**
  * Autoload all my classes
  */
