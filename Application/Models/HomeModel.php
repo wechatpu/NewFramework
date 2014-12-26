@@ -1,4 +1,8 @@
 <?php
+/**
+ * Model of the Home controller.
+ * Handles the database connection and function of the controller
+ */
 namespace Application\Models;
 
 class HomeModel {
@@ -9,6 +13,8 @@ class HomeModel {
 	}
 	
 	public function getTestUser() {
-		return "Henrik";
+		$this->db->query("SELECT * FROM user");
+		$this->db->execute();
+		return $this->db->resultSet();
 	}
 }

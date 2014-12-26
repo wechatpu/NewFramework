@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * Static view creates new smarty object
+ * handles the template engine
+ * @author Henrik
+ */
 namespace Application\Libs;
 
 abstract class StaticView {
@@ -15,12 +19,12 @@ abstract class StaticView {
 		require_once 'Application/Libs/SmartyLibs/Smarty.class.php';
 		
 		$tempSmarty = new \Smarty();
-		$tempSmarty->template_dir = "Public/smarty/templates/";
-		$tempSmarty->compile_dir  = "Public/smarty/templates_c/";
-		$tempSmarty->config_dir   = "Public/smarty/configs/";
-		$tempSmarty->cache_dir    = "Public/smarty/cache/";
-		$tempSmarty->caching 	  = true;
-		$tempSmarty->cache_lifetime = 120;
+		$tempSmarty->template_dir   = SMARTY_TEMPLATE_DIR;
+		$tempSmarty->compile_dir    = SMARTY_TEMPLATE_C_DIR;
+		$tempSmarty->config_dir     = SMARTY_CONFIG_DIR;
+		$tempSmarty->cache_dir      = SMARTY_CACHE_DIR;
+		$tempSmarty->caching 	    = SMARTY_USE_CACHE;
+		$tempSmarty->cache_lifetime = SMARTY_CACHE_LIFETIME;
 		
 		return $tempSmarty;
 	}

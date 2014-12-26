@@ -12,16 +12,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'nocache_hash' => '7953549ab4a9576074-01496211',
   'cache_lifetime' => 120,
   'version' => 'Smarty-3.1.21-dev',
-  'unifunc' => 'content_549ab789a06b90_54762521',
-  'variables' => 
-  array (
-    'name' => 0,
-    'array' => 0,
-    'value' => 0,
-  ),
+  'unifunc' => 'content_549af413e90088_90128479',
   'has_nocache_code' => false,
 ),true); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_549ab789a06b90_54762521')) {function content_549ab789a06b90_54762521($_smarty_tpl) {?>Hallo Henrik, herzlich Willkommen! <br />
+<?php if ($_valid && !is_callable('content_549af413e90088_90128479')) {function content_549af413e90088_90128479($_smarty_tpl) {?>Hallo  , herzlich Willkommen! <br />
 Array: <br />
 <ul>
 		  <li>Some</li>

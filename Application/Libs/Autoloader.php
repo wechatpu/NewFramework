@@ -1,4 +1,8 @@
 <?php
+/**
+ * Autoloader to load all classes
+ * Just include the config file to make sure everything is going to work well.
+ */
 namespace Application\Libs;
 
 require_once 'Application/Config/Config.php';

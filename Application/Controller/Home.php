@@ -1,7 +1,7 @@
 <?php
 /**
  * HomeController for testing reasons
- * Author: Henrik Thien
+ * @author Henrik
  */
 
 namespace Application\Controller;
@@ -22,10 +22,10 @@ class Home extends Controller {
 	 * @see \Application\Libs\Controller::index()
 	 */
 	public function index() {
-		$arr = array("Some", "Stupid", "Array");
+		$arr = $this->getModel()->getTestUser();
 		
 		$view = new HomeView("home.tpl");
-		$view->assign("name", $this->getModel()->getTestUser());
+		$view->assign("name", "Hello World");
 		$view->assign("array", $arr);
 		$view->display();
 	}
@@ -36,6 +36,9 @@ class Home extends Controller {
 	public function test($param1) {
 		echo "test function with param1: " . $param1;
 		echo "<br />";
-		echo "Testuser: " . $this->getModel()->getTestUser();
+		echo "Testuser: <br>";
+		echo "<pre>";
+		print_r($this->getModel()->getTestUser());
+		echo "</pre>";
 	}
 }
